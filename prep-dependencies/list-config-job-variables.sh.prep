@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if find $WORKDIR/database/backup-jobs/ -mindepth 1 -maxdepth 1 | read; then
+echo "Which backup variables would you like to view?"
+read BKIDVIEW
+# Checking if backup job id exist
+	if [ -d "$WORKDIR/database/backup-jobs/$BKIDVIEW" ];
+	then
+	tail -n +1 $WORKDIR/database/backup-jobs/$BKIDVIEW/$BKIDVIEW-Configuration.env
+	else
+	echo "Wrong backup job ID specified! Exitting"
+	exit
+	fi
+
+else
+echo "There are no backups to view!"
+fi
+
+
