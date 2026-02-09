@@ -13,7 +13,7 @@ cd /etc
 wget https://github.com/korshakov/lss-backup-cli/archive/refs/tags/v1.0.1.tar.gz
 tar -xvf v1.0.1.tar.gz
 rm v1.0.1.tar.gz
-mv lss-backup-cli-v1.0.1 lss-backup
+mv lss-backup-cli-1.0.1 lss-backup
 cd lss-backup
 chmod +x *.sh
 chmod +x functions/*.sh prep-dependencies/*.sh.prep
