@@ -9,6 +9,8 @@ More information coming soon. This is an early-stage release candidate.
 ## Install
 Make sure you are downloading the latest release.
 ```
+cd /etc
+wget https://github.com/korshakov/lss-backup-legacy-stable-cli/archive/refs/tags/v1.0.0.tar.gz
 tar -xvf v1.0.0.tar.gz
 rm v1.0.0.tar.gz
 mv lss-backup-v1.0.0 lss-backup
