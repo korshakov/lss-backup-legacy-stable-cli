@@ -158,7 +158,7 @@ select DATADESTROYASK in "Yes - Delete all data" "No - Just delete configuration
 
         "No - Just delete configuration files" ) configdestroy ; break;;
 
-	"EXIT!" ) clear && echo "Nothing was deleted! Program closed succesfully." ; exit;;
+	"EXIT!" ) clear && echo "Nothing was deleted! Program closed successfully." ; exit;;
     esac
 done
 else

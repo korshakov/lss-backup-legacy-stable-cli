@@ -10,6 +10,9 @@ More information coming soon. This is an early-stage release candidate.
 Make sure you are downloading the latest release.
 ```
 cd /etc
+wget https://github.com/korshakov/lss-backup-legacy-stable-cli/archive/refs/tags/Legacy-1.0.zip
+unzip Legacy-1.0.zip
+mv lss-backup-legacy-stable-cli-Legacy-1.0 lss-backup
 wget https://github.com/korshakov/lss-backup-cli/archive/refs/tags/v1.0.0.tar.gz
 tar -xvf v1.0.0.tar.gz
 rm v1.0.0.tar.gz

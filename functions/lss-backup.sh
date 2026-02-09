@@ -43,7 +43,7 @@ then
 else
 figlet LSS RESTIC 
 echo "-----------------------------------"
-echo "Restic backup finished succesfully."
+echo "Restic backup finished successfully."
 ELAPSED_TIME=$(($SECONDS - $START_TIME))
 echo "Restic backup took: $(($ELAPSED_TIME/60)) min $(($ELAPSED_TIME%60)) sec"
 echo "-----------------------------------"
@@ -208,7 +208,7 @@ else
 # Sending closing ping backup is finished
 figlet LSS RSYNC
 echo "----------------------------------"
-echo "Rsync backup finished succesfully!"
+echo "Rsync backup finished successfully!"
 ELAPSED_TIME=$(($SECONDS - $START_TIME))
 echo "Rsync backup took: $(($ELAPSED_TIME/60)) min $(($ELAPSED_TIME%60)) sec"
 echo "-----------------------------------"

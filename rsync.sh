@@ -1,4 +1,4 @@
-##!/bin/bash
+#!/bin/bash
 
 ###### FUNCTIONS STARTS HERE
 ### DAILY FUNCTION

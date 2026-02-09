@@ -21,7 +21,7 @@ LSS Backup Function Documentation
 
 7 - Restic Repo Init Only
 	Script which invoked restic repo initialization only. This is good for situations when user does
-	not want to run backup immidietly, but rather let the backup run on first schedule. Restic repository
+	not want to run backup immediately, but rather let the backup run on first schedule. Restic repository
 	must be initialized before schedule, otherwise backup job on schedule will fail.
 
 8 - Starter Script
@@ -39,11 +39,11 @@ LSS Backup Function Documentation
 
 11 - Local Source Folder Checks
 	Script checks if local source folder is empty and if folder exists. If empty or does not exist
-	scritp will send failed ping.
+	script will send failed ping.
 
-12 - SNB/NFS Source Folder Checks
-	Script checks if smb/nfs source folder is empty and if folder exists. If empty or does not exist
-	scritp will send failed ping.
+12 - SMB/NFS Source Folder Checks
+	Script checks if SMB/NFS source folder is empty and if folder exists. If empty or does not exist
+	script will send failed ping.
 
 13 - Destination Type Checks
 	Script checks if destination has been specified as LOCAL, SMB, NFS or S3. For SMB and NFS it will further check
@@ -63,8 +63,8 @@ LSS Backup Function Documentation
 
 17 - Repository Check
 	If RSYNC is used as a backup program it will move to lss backup script. If RESTIC is used as a backup it
-	will export all restic s3 variables then check if snapshost exist. If not it will ask user to confirm
-	that this is first time backup. User has 50 seconds to confirm. If it isnt first run program will exit and
+	will export all restic s3 variables then check if snapshot exist. If not it will ask user to confirm
+	that this is first time backup. User has 50 seconds to confirm. If it isn't first run program will exit and
 	send failed ping.
 
 18 - LSS Backup
@@ -73,11 +73,11 @@ LSS Backup Function Documentation
 	by following exit code documents. Rsync process at the end moves to backup log cleanup.
 
 19 - LSS No Reten, LSS Reten Keep Last Only , LSS Reten Full
-	At the end of restic process if succesfull it will move to backup retention cleanup. Based on user 
+	At the end of restic process if successful it will move to backup retention cleanup. Based on user 
 	specified retention script will all backups no longer needed.
 
 20 - LSS Prune
-	After Retention LSS scripts from point 19 will move imidietly to lss prune. Script will delete all
+	After Retention LSS scripts from point 19 will move immediately to lss prune. Script will delete all
 	forgotten snapshots.
 
 21 Log Cleanup

@@ -19,7 +19,7 @@ then
         then
         	echo "No domain specified, using username & password only to login to //"$MPTARGETIP"/"$MPSN" share."
         	mount -t cifs //"$MPTARGETIP"/"$MPSN" "$SDIR" -o username="$USERNAME",password="$PASSWORD",nouser_xattr
-		echo "Checking if mount was succesfull"
+		echo "Checking if mount was successful"
                 if mount | grep "$SDIR" > /dev/null; then
                 echo "Source mountpoint is now mounted as per config"
                 # daisy to source folder check.
@@ -35,7 +35,7 @@ then
         else
         	echo "Domain has been specified, using username, password and domain to login to //$MPTARGETIP/$MPSN share."
         	mount -t cifs //"$MPTARGETIP"/"$MPSN" "$SDIR" -o username="$USERNAME",password="$PASSWORD",domain="$DOMAIN",nouser_xattr
-		echo "Checking if mount was succesfull"
+		echo "Checking if mount was successful"
 		if mount | grep "$SDIR" > /dev/null; then
         	echo "Source mountpoint is now mounted as per config"
         	# daisy to source folder check.
@@ -71,7 +71,7 @@ then
         then
                 echo "No domain specified, using username & password only to login to //"$MPTARGETIP"/"$MPSN" share."
                 mount -t nfs -O user="$USERNAME",pass="$PASSWORD" "$MPTARGETIP":/"$MPSN" "$SDIR"
-		echo "Checking if mount was succesfull"
+		echo "Checking if mount was successful"
 		if mount | grep "$SDIR" > /dev/null; then
                 echo "Source mountpoint is now mounted as per config"
                 # daisy to source folder check.
@@ -87,7 +87,7 @@ then
         else
                 echo "Domain has been specified, using username, password and domain to login to //$MPTARGETIP/$MPSN share."
                 mount -t nfs -O user="$USERNAME",pass="$PASSWORD",domain="$DOMAIN" "$MPTARGETIP":/"$MPSN" "$SDIR"
-                echo "Checking if mount was succesfull"
+                echo "Checking if mount was successful"
                 if mount | grep "$SDIR" > /dev/null; then
                 echo "Source mountpoint is now mounted as per config"
 		# daisy to source folder check.

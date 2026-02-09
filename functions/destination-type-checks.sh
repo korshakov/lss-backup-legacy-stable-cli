@@ -19,7 +19,7 @@ then
         then
         	echo "No domain specified, using username & password only to login to //"$DMPTARGETIP"/"$DMPSN" share."
         	mount -t cifs //"$DMPTARGETIP"/"$DMPSN" "/mnt/lss-backup/$BKID/destination" -o username="$DUSERNAME",password="$DPASSWORD"
-		echo "Checking if mount was succesfull"
+		echo "Checking if mount was successful"
                 if mount | grep "/mnt/lss-backup/$BKID/destination" > /dev/null; then
                 echo "Destination mountpoint is now mounted as per config"
                 # daisy to destination folder check.
@@ -35,7 +35,7 @@ then
         else
         	echo "Domain has been specified, using username, password and domain to login to //$DMPTARGETIP/$DMPSN share."
         	mount -t cifs //"$DMPTARGETIP"/"$DMPSN" "/mnt/lss-backup/$BKID/destination" -o username="$DUSERNAME",password="$DPASSWORD",domain="$DDOMAIN"
-		echo "Checking if mount was succesfull"
+		echo "Checking if mount was successful"
 		if mount | grep "/mnt/lss-backup/$BKID/destination" > /dev/null; then
         	echo "Destination mountpoint is now mounted as per config"
         	# daisy to destination folder check.
@@ -71,7 +71,7 @@ then
         then
                 echo "No domain specified, using username & password only to login to //"$DMPTARGETIP""$DMPSN" share."
                 mount -t nfs -O user="$DUSERNAME",pass="$DPASSWORD" "$DMPTARGETIP":/"$DMPSN" "/mnt/lss-backup/$BKID/destination"
-		echo "Checking if mount was succesfull"
+		echo "Checking if mount was successful"
 		if mount | grep "/mnt/lss-backup/$BKID/destination" > /dev/null; then
                 echo "Destination mountpoint is now mounted as per config"
                 # daisy to destination folder check.
@@ -87,7 +87,7 @@ then
         else
                 echo "Domain has been specified, using username, password and domain to login to //$DMPTARGETIP/$DMPSN share."
                 mount -t nfs -O user="$DUSERNAME",pass="$DPASSWORD",domain="$DDOMAIN" "$DMPTARGETIP":/"$DMPSN" "/mnt/lss-backup/$BKID/destination"
-                echo "Checking if mount was succesfull"
+                echo "Checking if mount was successful"
                 if mount | grep "/mnt/lss-backup/$BKID/destination" > /dev/null; then
                 echo "Destination mountpoint is now mounted as per config"
 		# daisy to destination folder check.

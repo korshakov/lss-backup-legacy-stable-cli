@@ -16,7 +16,7 @@ then
         then
         	echo "No domain specified, using username & password only to login to //"$DMPTARGETIP"/"$DMPSN" share."
         	mount -t cifs //"$DMPTARGETIP"/"$DMPSN" "/mnt/lss-backup/$BKID/destination" -o username="$DUSERNAME",password="$DPASSWORD"
-		echo "Checking if mount was succesfull"
+		echo "Checking if mount was successful"
                 if mount | grep "/mnt/lss-backup/$BKID/destination" > /dev/null; then
                 echo "Source to restore mountpoint is now mounted as per config"
                 else
@@ -27,7 +27,7 @@ then
         else
         	echo "Domain has been specified, using username, password and domain to login to //$DMPTARGETIP/$DMPSN share."
         	mount -t cifs //"$DMPTARGETIP"/"$DMPSN" "/mnt/lss-backup/$BKID/destination" -o username="$DUSERNAME",password="$DPASSWORD",domain="$DDOMAIN"
-		echo "Checking if mount was succesfull"
+		echo "Checking if mount was successful"
 		if mount | grep "/mnt/lss-backup/$BKID/destination" > /dev/null; then
         	echo "Source to restore  mountpoint is now mounted as per config"
 		else
@@ -52,7 +52,7 @@ then
         then
                 echo "No domain specified, using username & password only to login to //"$DMPTARGETIP""$DMPSN" share."
                 mount -t nfs -O user="$DUSERNAME",pass="$DPASSWORD" "$DMPTARGETIP":/"$DMPSN" "/mnt/lss-backup/$BKID/destination"
-		echo "Checking if mount was succesfull"
+		echo "Checking if mount was successful"
 		if mount | grep "/mnt/lss-backup/$BKID/destination" > /dev/null; then
                 echo "Source to restore mountpoint is now mounted as per config"
                 else
@@ -63,7 +63,7 @@ then
         else
                 echo "Domain has been specified, using username, password and domain to login to //$DMPTARGETIP/$DMPSN share."
                 mount -t nfs -O user="$DUSERNAME",pass="$DPASSWORD",domain="$DDOMAIN" "$DMPTARGETIP":/"$DMPSN" "/mnt/lss-backup/$BKID/destination"
-                echo "Checking if mount was succesfull"
+                echo "Checking if mount was successful"
                 if mount | grep "/mnt/lss-backup/$BKID/destination" > /dev/null; then
                 echo "Source to restore mountpoint is now mounted as per config"
                 else
@@ -125,7 +125,7 @@ if [[ -z "$smbrestoredomain" ]]
 then
 echo "Mounting smb without domain"
 mount -t cifs //"$smbipaddr"/"$smbrestoredir" "$restoretagetdir" -o username="$smbrestoreusername",password="$smbrestoreuserpasswd"
-echo "Checking if mount was succesfull"
+echo "Checking if mount was successful"
 if mount | grep "$smbrestoredir" > /dev/null; then
 echo "SMB restore directory mounted successfully."
 else
@@ -135,7 +135,7 @@ fi
 else
 echo "Mounting smb with domain."
 mount -t cifs //"$smbipaddr"/"$smbrestoredir" "$restoretargetdir" -o username="$smbrestoreusername",password="$smbrestoreuserpasswd",domain="$smbrestoredomain"
-echo "Checking if mount was succesfull"
+echo "Checking if mount was successful"
 if mount | grep "$smbrestoredir" > /dev/null; then
 echo "SMB restore directory mounted successfully."
 else
@@ -184,7 +184,7 @@ if [[ -z "$nfsrestoredomain" ]]
 then
 echo "Mounting nfs without domain"
 mount -t nfs -O user="$nfsrestoreusername",pass="$nfsrestoreuserpasswd" "$nfsipaddr":/"$nfsrestoredir" "$restoretargetdir"
-echo "Checking if mount was succesfull"
+echo "Checking if mount was successful"
 if mount | grep "$nfsrestoredir" > /dev/null; then
 echo "NFS restore directory mounted successfully."
 else
@@ -194,7 +194,7 @@ fi
 else
 echo "Mounting nfs with domain."
 mount -t nfs -O user="$nfsrestoreusername",pass="$nfsrestoreuserpasswd",domain="$nfsrestoredomain" "$nfsipaddr":/"$nfsrestoredir" "$restoretargetdir"
-echo "Checking if mount was succesfull"
+echo "Checking if mount was successful"
 if mount | grep "$nfsrestoredir" > /dev/null; then
 echo "NFS restore directory mounted successfully."
 else
@@ -296,7 +296,7 @@ if [[ $smbrestoremountfunctiontype == 'SMB' ]] || [[ $smbrestoremountfunctiontyp
 then
 umount "$restoretargetdir"
 rm -rf "$restoretargetdir"
-echo "Tidy up succesfull."
+echo "Tidy up successful."
 else
 echo "Tidy up failed! Due to called tidy up function, restore destination was specified as SMB/NFS but something got wrong!"
 fi

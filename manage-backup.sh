@@ -12,7 +12,7 @@ removesnapshots () {
 restic -r $LSS_REPOSITORY snapshots
 echo "Type in snapshot ID to remove."
 read SNAPREMOVE
-echo "Removing snapshot is not revertable process, are you 100% sure you want to delete this snapshost?"
+echo "Removing snapshot is not reversible process, are you 100% sure you want to delete this snapshot?"
 
 select snapremoveconfirm in "Yes - Delete snapshot now!" "No - Cancel now!"; do
 case $snapremoveconfirm in

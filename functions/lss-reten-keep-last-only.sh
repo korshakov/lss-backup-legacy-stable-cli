@@ -9,7 +9,7 @@ echo "Retention type: Last Only"
 restic -r $LSS_REPOSITORY forget --keep-last $RESTIC_FORGETLAST
 
 # Moving to pruning
-echo "Restic retention finished succesfully!"
+echo "Restic retention finished successfully!"
 ELAPSED_TIME=$(($SECONDS - $START_TIME))
 echo "Retention took: $(($ELAPSED_TIME/60)) min $(($ELAPSED_TIME%60)) sec"
 echo "Mooving to pruning"

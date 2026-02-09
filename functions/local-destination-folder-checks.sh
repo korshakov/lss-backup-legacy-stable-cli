@@ -14,7 +14,7 @@ if [ -d "$BACKUPDIR" ];
     else
 	echo "LOCAL destination directory does not exist. First time backup?"
         mkdir -p ${BACKUPDIR}
-	echo "Checking if folder creation was succesful."
+	echo "Checking if folder creation was successful."
 	if [ -d "$BACKUPDIR" ];
     	then
         # Take action if $DIR exists. #

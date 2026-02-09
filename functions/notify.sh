@@ -24,7 +24,7 @@ echo -e "Subject:${subject}\n${body}" | /usr/sbin/sendmail -t "${to}"
 
 else
 
-subject="$PROGRAM backup job $BKID-$BKFQ-$BKNAME Has finished sucessfully."
+subject="$PROGRAM backup job $BKID-$BKFQ-$BKNAME Has finished successfully."
 
 body=$(cat $LOG_FILE)
 
@@ -50,7 +50,7 @@ echo -e "Subject:${subject}\n${body}" | /usr/sbin/sendmail -t "${to}"
 
 else
 
-echo "Backup finished succesfully. Email notifications are to failure only. Not sending any emails."
+echo "Backup finished successfully. Email notifications are to failure only. Not sending any emails."
 
 
 fi

@@ -1,4 +1,4 @@
-##!/bin/bash
+#!/bin/bash
 
 
 ###### FUNCTIONS STARTS HERE
@@ -83,14 +83,14 @@ echo "BKFQ=Manual-Only" >> ./database/backup-jobs/"$SETUPBKID"/"$SETUPBKID-Confi
 
 ### START OF EXLUSION FUNCTION
 
-exlusionfunction (){
+exclusionfunction (){
 echo "EXCLUDE=YES" >> ./database/backup-jobs/"$SETUPBKID"/"$SETUPBKID-Configuration.env"
 
 echo "EXCLUDEFILE=${SETUPWORKDIR}/database/backup-jobs/"$SETUPBKID"/${SETUPBKID}-exclusion-file.txt" >> ./database/backup-jobs/${SETUPBKID}/${SETUPBKID}-Configuration.env
 
 touch ./database/backup-jobs/"$SETUPBKID"/"$SETUPBKID-exclusion-file.txt"
 
-echo "Your exclusion file has been created! Don't forget to input your exlusion parameters according to restic guidelines."
+echo "Your exclusion file has been created! Don't forget to input your exclusion parameters according to restic guidelines."
 
 echo "You exclusion file is located at /etc/lss-backup/database/backup-jobs/"$SETUPBKID"/"$SETUPBKID-exclusion-file.txt""
 }
@@ -674,7 +674,7 @@ echo "Do you want to use restic exclusion file?"
 select SETUPEXLUSIONFILE in "Yes" "No"; do
     case $SETUPEXLUSIONFILE in
 
-        Yes ) exlusionfunction ; break;;
+        Yes ) exclusionfunction ; break;;
 
         No ) noexclusionfunction ; break;;
 
